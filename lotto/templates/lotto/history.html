@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구매 내역</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .ticket {
+            padding: 15px;
+            margin: 10px;
+            background: #eeeeee;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background: green;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>복권 구매 내역</h1>
+    <h2>
+    이번 회차 당첨 번호:
+</h2>
+
+<h3>
+
+    {% for number in winning_numbers %}
+        {{ number }}
+    {% endfor %}
+
+</h3>
+
+<br>
+
+    {% for ticket in tickets %}
+
+        <div class="ticket">
+
+    번호:
+    {{ ticket.numbers }}
+
+    <br><br>
+
+    결과:
+    {{ ticket.result }}
+
+</div>
+
+    {% endfor %}
+
+    <br>
+
+    <a href="/">
+        메인으로
+    </a>
+
+</div>
+
+</body>
+</html>
